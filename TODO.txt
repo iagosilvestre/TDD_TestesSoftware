@@ -1,0 +1,13 @@
+TODO
+1. Empresa
+	1.1 Adicionar Funcionario
+	1.2 Remover Funcionario
+2. Funcionario
+3. Projeto
+4. Ocorrencia
+5. Responsavel por Ocorrencia
+6. Conclusao de Ocorrencia
+
+Ref:
+https://stackoverflow.com/questions/2797139/python-using-methods-from-other-classes
+
