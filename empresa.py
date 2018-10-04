@@ -5,3 +5,6 @@ class Empresa(object):
 
     def getListaDeFuncionarios(self):
     	return self.funcionarios
+
+    def adicionaFuncionario(self, funcionario):
+    	self.funcionarios = self.funcionarios.append(funcionario)
