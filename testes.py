@@ -5,11 +5,9 @@ import unittest
 # print(a.sharedMethod())
 
 class TDD(unittest.TestCase):
-    def setUp(self):
-        self.a = Empresa()
 
     def teste_x(self):
-        self.assertEqual(5, self.a.sharedMethod())
+        self.assertEqual(0, self.angeloni.getListaDeFuncionarios())
 
 if __name__ == "__main__":
     unittest.main() # run all tests
