@@ -3,6 +3,9 @@ import unittest
 
 class TDD(unittest.TestCase):
 
+    def setUp(self):
+        self.angeloni = Empresa([])
+
     def teste_criaEmpresa(self):
         self.listaDeFuncionarios = ["Ivan", "Joao"]
         self.angeloni = Empresa(self.listaDeFuncionarios)
@@ -12,21 +15,20 @@ class TDD(unittest.TestCase):
         self.listaDeFuncionarios = ["Ivan", "Joao"]
         self.angeloni = Empresa(self.listaDeFuncionarios)
         self.angeloni.adicionaFuncionario("Marcio")
-        self.listaDeFuncionarios = self.listaDeFuncionarios.append("Marcio")
+        self.listaDeFuncionarios.append("Marcio")
         self.assertEqual(self.listaDeFuncionarios, self.angeloni.getListaDeFuncionarios())
 
-def teste_adicionaFuncionarios(self):
-        self.listaDeFuncionarios = ["Ivan", "Joao"]
+    def teste_adicionaFuncionarios(self):
+        self.listaDeFuncionarios = ["Ivan", "Joao", "Marcio", "Otavio"]
         self.angeloni = Empresa(self.listaDeFuncionarios)
-        self.angeloni.adicionaFuncionario("Marcio")
-        self.angeloni.adicionaFuncionario("Jose")
-        self.listaDeFuncionarios = self.listaDeFuncionarios.append("Marcio")
-        self.listaDeFuncionarios = self.listaDeFuncionarios.append("Jose")
+        self.listaDeFuncionarios.append("Thiago")
+        self.angeloni.adicionaFuncionario("Thiago")
         self.assertEqual(self.listaDeFuncionarios, self.angeloni.getListaDeFuncionarios())
 
-    # def teste_listaDeFuncionarios(self):
-    #     self.angeloni = Empresa()
-    #     self.assertEqual(["Ivan"], self.angeloni.getListaDeFuncionarios())
+    def tearDown(self):
+        self.angeloni.__del__()
+        self.angeloni = None
+    #def teste_adicionaFuncionarioNomeVazio(self):
 
 if __name__ == "__main__":
     unittest.main() # run all tests
