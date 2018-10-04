@@ -4,7 +4,7 @@ class Empresa(object):
         self.funcionarios = listaFuncionarios[:]
 
     def getListaDeFuncionarios(self):
-        return self.funcionarios
+        return self.funcionarios[:]
 
     def adicionaFuncionario(self, funcionario):
         self.funcionarios.append(funcionario)
