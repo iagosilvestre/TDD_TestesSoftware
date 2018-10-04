@@ -12,7 +12,7 @@ class TDD(unittest.TestCase):
     def teste_adicionaFuncionario(self):
         self.angeloni.adicionaFuncionario("Marcio")
         self.listaDeFuncionarios.append("Marcio")
-        self.assertEqual(self.listaDeFuncionarios, self.angeloni.getListaDeFuncionarios())
+        self.assertEqual(self.listaDeFuncionarios, self.angeloni.getListaDeFuncionariosOrganizada())
 
     def teste_adicionaFuncionarios_ordemDiferente(self):
         self.listaDeFuncionarios.append("Thiago")
@@ -20,13 +20,12 @@ class TDD(unittest.TestCase):
         self.angeloni.adicionaFuncionario("Maria")
         self.angeloni.adicionaFuncionario("Thiago")
 
-        self.assertEqual(self.listaDeFuncionarios, self.angeloni.getListaDeFuncionarios())
+        self.listaDeFuncionarios.sort()
+        self.assertEqual(self.listaDeFuncionarios, self.angeloni.getListaDeFuncionariosOrganizada())
 
     def teste_removeFuncionario(self):
         self.angeloni.removeFuncionario("Joao")
         self.listaDeFuncionarios.remove("Joao")
-        print(self.angeloni.getListaDeFuncionarios())
-        print(self.listaDeFuncionarios)
         self.assertEqual(self.listaDeFuncionarios, self.angeloni.getListaDeFuncionarios())
 
     def teste_removeOutroFuncionario(self):

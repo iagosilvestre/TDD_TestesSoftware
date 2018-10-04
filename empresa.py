@@ -5,11 +5,14 @@ class Empresa(object):
 
     def __del__(self):
         return 1
-        
+
     def getListaDeFuncionarios(self):
         return self.funcionarios[:]
 
-    def sortFuncionarios(self):
+    def sortListaFuncionarios(self):
+        self.funcionarios.sort()
+
+    def getListaDeFuncionariosOrganizada(self):
         self.funcionarios.sort()
         return self.funcionarios[:]
 
