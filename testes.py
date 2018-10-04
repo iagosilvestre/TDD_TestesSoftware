@@ -7,6 +7,7 @@ import unittest
 class TDD(unittest.TestCase):
 
     def teste_x(self):
+        self.angeloni = Empresa()
         self.assertEqual(0, self.angeloni.getListaDeFuncionarios())
 
 if __name__ == "__main__":
