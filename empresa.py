@@ -1,7 +1,10 @@
 class Empresa(object):
 
     def __init__(self):
-        self.a = 0
+        self.funcionarios = 0
 
-    # def sharedMethod(self):
-    #     return self.x
+    def getListaDeFuncionarios(self):
+    	return self.funcionarios
+
+    def sharedMethod(self):
+        return self.x
