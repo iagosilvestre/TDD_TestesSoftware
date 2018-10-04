@@ -1,7 +1,12 @@
 from empresa import *
 import unittest
 
-class TDD(unittest.TestCase):
+class TDD_Empresa(unittest.TestCase):
+    def teste_CriaEmpresa(self):
+        self.angeloni = Empresa([])
+        self.assertEqual([], self.angeloni.funcionarios)
+
+class TDD_Funcionario(unittest.TestCase):
 
     def setUp(self):
         self.angeloni = Empresa([])
