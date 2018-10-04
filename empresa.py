@@ -9,5 +9,10 @@ class Empresa(object):
     def adicionaFuncionario(self, funcionario):
         self.funcionarios.append(funcionario)
 
+    def removeFuncionario(self, funcionario):
+        self.funcionarios.remove(funcionario)
+
+    def sortFuncionarios(self):
+        self.funcionarios.sort()
     def __del__(self):
         return 1

@@ -14,12 +14,25 @@ class TDD(unittest.TestCase):
         self.listaDeFuncionarios.append("Marcio")
         self.assertEqual(self.listaDeFuncionarios, self.angeloni.getListaDeFuncionarios())
 
-    def teste_adicionaFuncionarios(self):
+    def teste_adicionaFuncionarios_ordemDiferente(self):
         self.listaDeFuncionarios.append("Thiago")
         self.listaDeFuncionarios.append("Maria")
         self.angeloni.adicionaFuncionario("Maria")
         self.angeloni.adicionaFuncionario("Thiago")
-        self.assertEqual(self.listaDeFuncionarios.sort(), self.angeloni.getListaDeFuncionarios().sort())
+
+        self.assertEqual(self.listaDeFuncionarios, self.angeloni.getListaDeFuncionarios())
+
+    def teste_removeFuncionario(self):
+        self.angeloni.removeFuncionario("Joao")
+        self.listaDeFuncionarios.remove("Joao")
+        print(self.angeloni.getListaDeFuncionarios())
+        print(self.listaDeFuncionarios)
+        self.assertEqual(self.listaDeFuncionarios, self.angeloni.getListaDeFuncionarios())
+
+    def teste_removeOutroFuncionario(self):
+        self.angeloni.removeFuncionario("Ivan")
+        self.listaDeFuncionarios.remove("Joao")
+        self.assertNotEqual(self.listaDeFuncionarios, self.angeloni.getListaDeFuncionarios())
 
     def tearDown(self):
         self.angeloni.__del__()
