@@ -12,7 +12,7 @@ class Empresa(object):
     	lista_nomes = []
     	for i in self.funcionarios:
     		lista_nomes.append(i.nome)
-        return lista_nomes
+        return lista_nomes	
 
     # def sortListaFuncionarios(self):
     #     self.funcionarios.sort()
