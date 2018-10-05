@@ -1,4 +1,5 @@
 from empresa import *
+from funcionario import *
 import unittest
 
 class TDD_Empresa(unittest.TestCase):
@@ -7,6 +8,11 @@ class TDD_Empresa(unittest.TestCase):
         self.assertEqual([], self.angeloni.funcionarios)
 
 class TDD_Funcionario(unittest.TestCase):
+    def teste_criaFuncionario(self):
+        self.func1 = Funcionario("Ivan")
+        self.assertEqual(self.func1.nome, "Ivan")
+
+class TDD_Empresa_Funcionario(unittest.TestCase):
 
     def setUp(self):
         self.angeloni = Empresa([])
@@ -41,7 +47,6 @@ class TDD_Funcionario(unittest.TestCase):
     def tearDown(self):
         self.angeloni.__del__()
         self.angeloni = None
-
 
 if __name__ == "__main__":
     unittest.main() # run all tests
