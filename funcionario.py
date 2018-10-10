@@ -1,7 +1,7 @@
 class Funcionario(object):
-	def __init__(self, nome):
-		self.nome = nome
+    def __init__(self, nome):
+        self.nomeFuncionario = nome
 
-	def __del__(self):
-		return 1
+    def __del__(self):
+        return 1
 

@@ -1,6 +1,7 @@
 from empresa import *
 from funcionario import *
 from projeto import *
+from ocorrencia import *
 import unittest
 
 class TDD_Empresa(unittest.TestCase):
@@ -14,8 +15,8 @@ class TDD_Funcionario(unittest.TestCase):
         self.listaDeFuncionarios = self.angeloni.getListaDeFuncionarios()
         self.ivan = Funcionario("Ivan")
         self.joao = Funcionario("Joao")
-        self.listaDeFuncionarios.append(self.ivan.nome)
-        self.listaDeFuncionarios.append(self.joao.nome)
+        self.listaDeFuncionarios.append(self.ivan.nomeFuncionario)
+        self.listaDeFuncionarios.append(self.joao.nomeFuncionario)
         self.angeloni.adicionaFuncionario(self.joao)
         self.angeloni.adicionaFuncionario(self.ivan)
 
@@ -25,7 +26,7 @@ class TDD_Funcionario(unittest.TestCase):
 
     def teste_criaFuncionario(self):
         self.funcionario1 = Funcionario("Ivan")
-        self.assertEqual(self.funcionario1.nome, "Ivan")
+        self.assertEqual(self.funcionario1.nomeFuncionario, "Ivan")
 
     def teste_adicionaFuncionario(self):
         self.listaDeFuncionarios.sort()
@@ -38,17 +39,29 @@ class TDD_Funcionario(unittest.TestCase):
 
 class TDD_projeto(unittest.TestCase):
     def setUp(self):
-        self.projeto = Projeto("Gerenciador de Tarefas")
+        self.projeto = Projeto("Gerenciador de Tarefas", [])
+
     def tearDown(self):
         self.projeto.__del__()
         self.projeto = None
+    
     def testeCriaProjeto(self):
-        self.projeto = Projeto("Gerenciador")
+        self.projeto = Projeto("Gerenciador", [])
         self.assertEqual("Gerenciador", self.projeto.nomeProjeto)
+    
     def testeAdicionaOcorrencia(self):
-        self.projeto.addOcorrencia("Bug A")
-        self.assertEqual("Bug A", self.projeto.getOcorrencia())
-        
+        self.ocorrencia1 = Ocorrencia("Bug A")
+        self.projeto.addOcorrencia(self.ocorrencia1)
+        self.assertEqual(["Bug A"], self.projeto.getOcorrencias())
+
+    def testeAdicionaVariasOcorrencias(self):
+        self.ocorrencia2 = Ocorrencia("Bug B")
+        self.ocorrencia1 = Ocorrencia("Bug A")
+        self.ocorrencia3 = Ocorrencia("Melhoria A")
+        self.projeto.addOcorrencia(self.ocorrencia1)
+        self.projeto.addOcorrencia(self.ocorrencia2)
+        self.projeto.addOcorrencia(self.ocorrencia3)
+        self.assertEqual(["Bug A", "Bug B", "Melhoria A"], self.projeto.getOcorrencias())
 
 
 if __name__ == "__main__":

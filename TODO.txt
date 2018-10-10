@@ -9,11 +9,11 @@ TODO
 	(FEITO) 2.1 Adicionar obj. Funcionario a Empresa
 	(FEITO) 2.2 Remover obj. Funcionario da Empresa
 3. Projeto
-	3.1 Criar Classe Projeto
+	(FEITO) 3.1 Criar Classe Projeto
+	*4.1 Criar Classe Ocorrencia c/ ID e resumo
 	3.2 Definir coleção de ocorrências
 	3.3 Atribuir Projetos aos Funcionarios
 4. Ocorrencia
-	4.1 Criar Classe Ocorrencia c/ ID e resumo
 	4.2 Adicionar tipo e prioridade (tarefa/bug/melhoria, alta/media/baixa) e status (aberta/fechada)
 	4.3 Modificacao da prioridade
 	4.4 Modificar Projeto p/ aceitar objs. Ocorrencia
