@@ -50,18 +50,31 @@ class TDD_projeto(unittest.TestCase):
         self.assertEqual("Gerenciador", self.projeto.nomeProjeto)
     
     def testeAdicionaOcorrencia(self):
-        self.ocorrencia1 = Ocorrencia("Bug A")
+        self.ocorrencia1 = Ocorrencia("Bug A", "Bug", "Alta", "Aberta")
         self.projeto.addOcorrencia(self.ocorrencia1)
         self.assertEqual(["Bug A"], self.projeto.getOcorrencias())
 
     def testeAdicionaVariasOcorrencias(self):
-        self.ocorrencia2 = Ocorrencia("Bug B")
-        self.ocorrencia1 = Ocorrencia("Bug A")
-        self.ocorrencia3 = Ocorrencia("Melhoria A")
+        self.ocorrencia2 = Ocorrencia("Bug B", "Bug", "Alta", "Aberta")
+        self.ocorrencia1 = Ocorrencia("Bug A", "Bug", "Alta", "Aberta")
+        self.ocorrencia3 = Ocorrencia("Melhoria A", "Melhoria", "Alta", "Aberta")
         self.projeto.addOcorrencia(self.ocorrencia1)
         self.projeto.addOcorrencia(self.ocorrencia2)
         self.projeto.addOcorrencia(self.ocorrencia3)
         self.assertEqual(["Bug A", "Bug B", "Melhoria A"], self.projeto.getOcorrencias())
+
+class TDD_ocorrencia(unittest.TestCase):
+    def setUp(self):
+        self.ocorrencia1 = Ocorrencia("Bug A", "Bug", "Alta", "Aberta")
+    def tearDown(self):
+        self.ocorrencia1.__del__()
+        self.ocorrencia1 = None
+
+    def testePrioridade(self):
+        self.assertEqual("Bug A", self.ocorrencia1.getNomeOcorrencia())
+        self.assertEqual("Bug", self.ocorrencia1.getTipoOcorrencia())
+        self.assertEqual("Alta", self.ocorrencia1.getPrioridade())
+        self.assertEqual("Aberta", self.ocorrencia1.getStatus())
 
 
 if __name__ == "__main__":
