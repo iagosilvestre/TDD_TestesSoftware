@@ -37,13 +37,18 @@ class TDD_Funcionario(unittest.TestCase):
         self.assertEqual(["Ivan"], self.angeloni.getListaDeFuncionarios())
 
 class TDD_projeto(unittest.TestCase):
-    # def setUp(self):
-    #     print("SetUp")
-    # def tearDown(self):
-    #     print("tearDown")
+    def setUp(self):
+        self.projeto = Projeto("Gerenciador de Tarefas")
+    def tearDown(self):
+        self.projeto.__del__()
+        self.projeto = None
     def testeCriaProjeto(self):
         self.projeto = Projeto("Gerenciador")
         self.assertEqual("Gerenciador", self.projeto.nomeProjeto)
+    def testeAdicionaOcorrencia(self):
+        self.projeto.addOcorrencia("Bug A")
+        self.assertEqual("Bug A", self.projeto.getOcorrencia())
+        
 
 
 if __name__ == "__main__":
