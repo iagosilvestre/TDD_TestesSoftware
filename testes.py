@@ -25,11 +25,25 @@ class TDD_Funcionario(unittest.TestCase):
         self.joao = Funcionario("Joao")
         self.listaDeFuncionarios.append(self.ivan.nome)
         self.listaDeFuncionarios.append(self.joao.nome)
-        self.angeloni.adicionaFuncionario(self.ivan)
         self.angeloni.adicionaFuncionario(self.joao)
-        print(self.angeloni.getListaDeFuncionarios())
+        self.angeloni.adicionaFuncionario(self.ivan)
+        self.listaDeFuncionarios.sort()
         self.assertEqual(["Ivan", "Joao"], self.angeloni.getListaDeFuncionarios())
 
+    def teste_removeFuncionario(self):
+        self.ivan = Funcionario("Ivan")
+        self.joao = Funcionario("Joao")
+        self.listaDeFuncionarios.append(self.ivan.nome)
+        self.listaDeFuncionarios.append(self.joao.nome)
+        self.angeloni.adicionaFuncionario(self.joao)
+        self.angeloni.adicionaFuncionario(self.ivan)
+        
+        self.angeloni.removeFuncionario(self.joao)
+        self.listaDeFuncionarios.remove("Joao")
+
+        self.assertEqual(["Ivan"], self.angeloni.getListaDeFuncionarios())
+if __name__ == "__main__":
+    unittest.main() # run all tests
 
 
 # class TDD_Empresa_Funcionario(unittest.TestCase):
@@ -67,6 +81,3 @@ class TDD_Funcionario(unittest.TestCase):
 #     def tearDown(self):
 #         self.angeloni.__del__()
 #         self.angeloni = None
-
-if __name__ == "__main__":
-    unittest.main() # run all tests
