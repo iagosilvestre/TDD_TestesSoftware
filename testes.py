@@ -102,7 +102,10 @@ class TDD_ocorrencia(unittest.TestCase):
 
     def testeAtribuiFuncionario(self):
         self.projeto.atribuiOcorrencia(self.ocorrencia1, self.ivan)
+        self.ivan.adicionaOcorrencia(self.ocorrencia1)
         self.assertEqual("Ivan", self.projeto.getOcorrenciaPorID(1).getResponsavel().getNome())
+        self.assertEqual(1, self.ivan.getNumeroOcorrencias())
+        self.assertTrue(self.ivan.checaOcorrencia(self.ocorrencia1.getNomeOcorrencia()))
 
     def testeModificaPrioridadeBaixa(self):
         self.ocorrencia1.setPrioridadeBaixa()
@@ -121,9 +124,10 @@ class TDD_ocorrencia(unittest.TestCase):
         self.joao = Funcionario("Joao")
         self.projeto.atribuiOcorrencia(self.ocorrencia1, self.ivan)
         self.projeto.getOcorrenciaPorID(1).setResponsavel(self.joao)
+        self.joao.adicionaOcorrencia(self.projeto.getOcorrenciaPorID(1))
         self.assertEqual("Joao", self.projeto.getOcorrenciaPorID(1).getResponsavel().getNome())
-
-
+        self.assertEqual(1, self.joao.getNumeroOcorrencias())
+        self.assertTrue(self.joao.checaOcorrencia(self.ocorrencia1.getNomeOcorrencia()))
 
 if __name__ == "__main__":
     unittest.main() # run all tests
