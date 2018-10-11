@@ -21,7 +21,7 @@ TODO
 	(FEITO) 5.1 Adicionar responsabilidades do Funcionario
 	(FEITO) 5.2 Adicionar limites de responsabilidades (10 abertas/func)
 	(FEITO) 5.3 Permitir modificacao do responsavel e da prioridade
-	5.4 Travar mudanças quando fecha ocorrencia
+	(FEITO) 5.4 Travar mudanças quando fecha ocorrencia
 	
 LINK GITHUB: https://github.com/idoria75/TDD_TestesSoftware
 
