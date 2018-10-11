@@ -1,3 +1,4 @@
+# Definicao da classe Projeto
 class Projeto(object):
     def __init__(self, nomeProjeto, ocorrencias):
         self.nomeProjeto = nomeProjeto
@@ -7,6 +8,7 @@ class Projeto(object):
     def __del__(self):
         return 1
 
+    # Atribui uma ocorrencia ao projeto
     def addOcorrencia(self, ocorrencia):
         ocorrencia.setID(self.ID_ocorrencias)
         self.ID_ocorrencias = self.ID_ocorrencias+1
@@ -19,6 +21,7 @@ class Projeto(object):
             lista_ocorrencias.sort()
         return lista_ocorrencias
 
+    # Retorna ocorrencia que possua certo ID
     def getOcorrenciaPorID(self, ID):
         for i in self.ocorrencias:
             if(i != None):
@@ -26,6 +29,7 @@ class Projeto(object):
                     return i
         return None
 
+    # Associa uma ocorrencia a um funcionario
     def atribuiOcorrencia(self, ocorrencia, funcionario):
         ocorrencia.setResponsavel(funcionario)
         self.addOcorrencia(ocorrencia)

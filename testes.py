@@ -4,11 +4,13 @@ from projeto import *
 from ocorrencia import *
 import unittest
 
+# Classe para testar criacao de uma instancia de Empresa
 class TDD_Empresa(unittest.TestCase):
     def teste_CriaEmpresa(self):
         self.angeloni = Empresa([])
         self.assertEqual([], self.angeloni.funcionarios)
 
+# Classe para testar funcionalidades da classe Funcionario
 class TDD_Funcionario(unittest.TestCase):
     def setUp(self):
         self.angeloni = Empresa([])
@@ -42,6 +44,7 @@ class TDD_Funcionario(unittest.TestCase):
         self.listaDeFuncionarios.remove("Joao")
         self.assertEqual(["Ivan"], self.angeloni.getListaDeFuncionarios())
 
+# Classe para testar funcionalidades da classe Projeto
 class TDD_projeto(unittest.TestCase):
     def setUp(self):
         self.projeto = Projeto("Gerenciador de Tarefas", [])
@@ -51,15 +54,15 @@ class TDD_projeto(unittest.TestCase):
         self.projeto = None
     
     def testeCriaProjeto(self):
-        self.projeto = Projeto("Gerenciador", [])
-        self.assertEqual("Gerenciador", self.projeto.nomeProjeto)
+        self.projeto1 = Projeto("Gerenciador", [])
+        self.assertEqual("Gerenciador", self.projeto1.nomeProjeto)
     
     def testeAdicionaOcorrencia(self):
         self.ocorrencia1 = Ocorrencia("Bug A", "Bug", "Alta", "Aberta", "ocorrencia1")
         self.projeto.addOcorrencia(self.ocorrencia1)
         self.assertEqual(["Bug A"], self.projeto.getOcorrencias())
 
-    def testeAdicionaVariasOcorrencias(self):
+    def testeAdicionaVariasOcorrencias_ForaDeOrdem(self):
         self.ocorrencia2 = Ocorrencia("Bug B", "Bug", "Alta", "Aberta", "ocorrencia2")
         self.ocorrencia1 = Ocorrencia("Bug A", "Bug", "Alta", "Aberta", "ocorrencia1")
         self.ocorrencia3 = Ocorrencia("Melhoria A", "Melhoria", "Alta", "Aberta", "ocorrencia3")
@@ -77,6 +80,7 @@ class TDD_projeto(unittest.TestCase):
         self.projeto.addOcorrencia(self.ocorrencia3)
         self.assertEqual(self.ocorrencia3.getNomeOcorrencia(),self.projeto.getOcorrenciaPorID(3).getNomeOcorrencia())
 
+# Classe para testar funcionalidades da classe Ocorrencia
 class TDD_ocorrencia(unittest.TestCase):
     def setUp(self):
         self.ocorrencia1 = Ocorrencia("Bug A", "Bug", "Alta", "Aberta", "ocorrencia1")
@@ -91,7 +95,7 @@ class TDD_ocorrencia(unittest.TestCase):
         self.ivan.__del__()
         self.ivan = None
 
-    def testeCriaOcorrencia(self):
+    def testeOcorrenciaCriada(self):
         self.assertEqual("Bug A", self.ocorrencia1.getNomeOcorrencia())
         self.assertEqual("Bug", self.ocorrencia1.getTipoOcorrencia())
         self.assertEqual("Alta", self.ocorrencia1.getPrioridade())
@@ -145,5 +149,6 @@ class TDD_ocorrencia(unittest.TestCase):
         self.assertEqual("Ivan", self.projeto.getOcorrenciaPorID(1).getResponsavel().getNome())
         self.assertEqual("Alta", self.projeto.getOcorrenciaPorID(1).getPrioridade())
 
+# Executa todos os testes
 if __name__ == "__main__":
-    unittest.main() # run all tests
+    unittest.main()

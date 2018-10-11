@@ -1,5 +1,4 @@
-from funcionario import *
-
+# Definicao da classe Empresa
 class Empresa(object):
 
     def __init__(self, listaFuncionarios):
@@ -8,6 +7,7 @@ class Empresa(object):
     def __del__(self):
         return 1
 
+    # Retorna lista com nomes dos funcionarios associados a Empresa
     def getListaDeFuncionarios(self):
         lista_nomes = []
         for i in self.funcionarios:

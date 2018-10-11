@@ -1,3 +1,4 @@
+# Definicao da classe Ocorrencia
 class Ocorrencia(object):
     def __init__(self, nomeOcorrencia, tipo, prioridade, status, resumo):
         self.nomeOcorrencia = nomeOcorrencia
