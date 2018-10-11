@@ -23,6 +23,11 @@ class TDD_Funcionario(unittest.TestCase):
     def tearDown(self):
         self.angeloni.__del__()
         self.angeloni = None
+        self.ivan.__del__()
+        self.ivan = None
+        self.joao.__del__()
+        self.joao = None
+        self.listaDeFuncionarios = []      
 
     def teste_criaFuncionario(self):
         self.funcionario1 = Funcionario("Ivan")
@@ -77,10 +82,16 @@ class TDD_projeto(unittest.TestCase):
 class TDD_ocorrencia(unittest.TestCase):
     def setUp(self):
         self.ocorrencia1 = Ocorrencia("Bug A", "Bug", "Alta", "Aberta", "ocorrencia1")
-        
+        self.projeto = Projeto("Gerenciador de Tarefas", [])
+        self.ivan = Funcionario("Ivan")
+
     def tearDown(self):
         self.ocorrencia1.__del__()
         self.ocorrencia1 = None
+        self.projeto.__del__()
+        self.projeto = None
+        self.ivan.__del__()
+        self.ivan = None
 
     def testeCriaOcorrencia(self):
         self.assertEqual("Bug A", self.ocorrencia1.getNomeOcorrencia())
@@ -90,9 +101,21 @@ class TDD_ocorrencia(unittest.TestCase):
         self.assertEqual("ocorrencia1", self.ocorrencia1.getResumo())
 
     def testeAtribuiFuncionario(self):
-        self.assertEqual("Ivan", self.ocorrencia1.getResponsavel())
+        self.projeto.atribuiOcorrencia(self.ocorrencia1, self.ivan)
+        self.assertEqual("Ivan", self.projeto.getOcorrenciaPorID(1).getResponsavel().getNome())
 
+    def testeModificaPrioridadeBaixa(self):
+        self.ocorrencia1.setPrioridadeBaixa()
+        self.assertEqual("Baixa", self.ocorrencia1.getPrioridade())
 
+    def testeModificaPrioridadeMedia(self):
+        self.ocorrencia1.setPrioridadeMedia()
+        self.assertEqual("Media", self.ocorrencia1.getPrioridade())
+
+    def testeModificaPrioridadeBaixa(self):
+        self.ocorrencia2 = Ocorrencia("Bug B", "Bug", "Media", "Aberta", "ocorrencia2")
+        self.ocorrencia2.setPrioridadeAlta()
+        self.assertEqual("Alta", self.ocorrencia2.getPrioridade())
 if __name__ == "__main__":
     unittest.main() # run all tests
 

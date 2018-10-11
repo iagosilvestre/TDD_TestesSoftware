@@ -15,8 +15,8 @@ TODO
 	(FEITO) 4.4 Modificar Projeto p/ aceitar objs. Ocorrencia
 4. Ocorrencia
 	(FEITO) 4.2 Adicionar tipo e prioridade (tarefa/bug/melhoria, alta/media/baixa) e status (aberta/fechada)
-	3.3 Atribuir Projetos aos Funcionarios
-	4.3 Modificacao da prioridade
+	(FEITO) 3.3 Atribuir Projetos aos Funcionarios
+	(FEITO) 4.3 Modificacao da prioridade
 5. Responsavel por Ocorrencia
 	5.1 Adicionar responsabilidades do Funcionario
 	5.2 Adicionar limites de responsabilidades (10 abertas/func)

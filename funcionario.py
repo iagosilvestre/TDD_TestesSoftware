@@ -5,3 +5,5 @@ class Funcionario(object):
     def __del__(self):
         return 1
 
+    def getNome(self):
+        return self.nomeFuncionario

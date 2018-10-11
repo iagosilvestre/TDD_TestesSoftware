@@ -25,3 +25,7 @@ class Projeto(object):
                 if(i.getID() == ID):
                     return i
         return None
+
+    def atribuiOcorrencia(self, ocorrencia, funcionario):
+        ocorrencia.setResponsavel(funcionario)
+        self.addOcorrencia(ocorrencia)
