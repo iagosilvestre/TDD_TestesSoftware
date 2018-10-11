@@ -75,8 +75,6 @@ class TDD_projeto(unittest.TestCase):
         self.projeto.addOcorrencia(self.ocorrencia1)
         self.projeto.addOcorrencia(self.ocorrencia2)
         self.projeto.addOcorrencia(self.ocorrencia3)
-        #print(self.ocorrencia3.getNomeOcorrencia())
-        #print(self.projeto.getOcorrenciaPorID(3).getNomeOcorrencia())
         self.assertEqual(self.ocorrencia3.getNomeOcorrencia(),self.projeto.getOcorrenciaPorID(3).getNomeOcorrencia())
 
 class TDD_ocorrencia(unittest.TestCase):
