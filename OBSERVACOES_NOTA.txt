@@ -1,0 +1,4 @@
+OBSERVACOES_NOTA:
+A nota da atividade é constituida de 2 partes:
+1. Código desenvolvido: Deve ser apresentado pra obter a nota.
+2. Avaliação de Código/Código Avaliado: Alguém tem que avaliar o código e vc tem que avaliar o código de alguém para obter a nota.
