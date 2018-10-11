@@ -133,6 +133,20 @@ class TDD_ocorrencia(unittest.TestCase):
         self.ocorrencia1.finalizaOcorrencia()
         self.assertEqual("Fechada" ,self.ocorrencia1.getStatus())
 
+    def testeLimiteOcorrenciasPorUsuario(self):
+        for i in range(15):
+            self.ivan.adicionaOcorrencia(self.ocorrencia1)
+        self.assertEqual(10, self.ivan.getNumeroOcorrencias())
+
+    def testeAlteracaoOcorrenciaFechada(self):
+        self.joao = Funcionario("Joao")
+        self.projeto.atribuiOcorrencia(self.ocorrencia1, self.ivan)
+        self.ocorrencia1.finalizaOcorrencia()
+        self.ocorrencia1.setPrioridadeMedia()
+        self.projeto.getOcorrenciaPorID(1).setResponsavel(self.joao)
+        self.assertEqual("Ivan", self.projeto.getOcorrenciaPorID(1).getResponsavel().getNome())
+        self.assertEqual("Alta", self.projeto.getOcorrenciaPorID(1).getPrioridade())
+
 if __name__ == "__main__":
     unittest.main() # run all tests
 

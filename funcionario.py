@@ -16,8 +16,9 @@ class Funcionario(object):
         return self.numOcorrencias
 
     def adicionaOcorrencia(self, ocorrencia):
-        self.listaOcorrencias.append(ocorrencia)
-        self.numOcorrencias = self.numOcorrencias + 1
+        if(self.numOcorrencias < 10):
+            self.listaOcorrencias.append(ocorrencia)
+            self.numOcorrencias = self.numOcorrencias + 1
 
     def checaOcorrencia(self, nomeOcorrencia):
         for i in self.listaOcorrencias:

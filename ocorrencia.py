@@ -36,16 +36,20 @@ class Ocorrencia(object):
         self.ID = ID
 
     def setResponsavel(self,funcionario):
-        self.responsavel = funcionario
+        if(self.status == "Aberta"):
+            self.responsavel = funcionario
 
     def setPrioridadeBaixa(self):
-        self.prioridade = "Baixa"
+        if(self.status == "Aberta"):
+            self.prioridade = "Baixa"
 
     def setPrioridadeMedia(self):
-        self.prioridade = "Media"
+        if(self.status == "Aberta"):
+            self.prioridade = "Media"
 
     def setPrioridadeAlta(self):
-        self.prioridade = "Alta"
+        if(self.status == "Aberta"):
+            self.prioridade = "Alta"
 
     def finalizaOcorrencia(self):
         self.status = "Fechada"
