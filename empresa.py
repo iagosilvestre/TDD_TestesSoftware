@@ -9,10 +9,10 @@ class Empresa(object):
         return 1
 
     def getListaDeFuncionarios(self):
-    	lista_nomes = []
-    	for i in self.funcionarios:
-    		lista_nomes.append(i.nome)
-    		lista_nomes.sort()
+        lista_nomes = []
+        for i in self.funcionarios:
+            lista_nomes.append(i.nomeFuncionario)
+            lista_nomes.sort()
         return lista_nomes
 
     # def sortListaFuncionarios(self):
