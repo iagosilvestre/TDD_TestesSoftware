@@ -46,3 +46,6 @@ class Ocorrencia(object):
 
     def setPrioridadeAlta(self):
         self.prioridade = "Alta"
+
+    def finalizaOcorrencia(self):
+        self.status = "Fechada"

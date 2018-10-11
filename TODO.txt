@@ -18,9 +18,10 @@ TODO
 	(FEITO) 3.3 Atribuir Projetos aos Funcionarios
 	(FEITO) 4.3 Modificacao da prioridade
 5. Responsavel por Ocorrencia
-	5.1 Adicionar responsabilidades do Funcionario
+	(FEITO) 5.1 Adicionar responsabilidades do Funcionario
 	5.2 Adicionar limites de responsabilidades (10 abertas/func)
-	5.3 Permitir modificacao do responsavel e da prioridade
+	(FEITO) 5.3 Permitir modificacao do responsavel e da prioridade
+	5.4 Travar mudanças quando fecha ocorrencia
 
 
 Ref:

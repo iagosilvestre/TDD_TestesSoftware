@@ -129,6 +129,10 @@ class TDD_ocorrencia(unittest.TestCase):
         self.assertEqual(1, self.joao.getNumeroOcorrencias())
         self.assertTrue(self.joao.checaOcorrencia(self.ocorrencia1.getNomeOcorrencia()))
 
+    def testeTerminaOcorrencia(self):
+        self.ocorrencia1.finalizaOcorrencia()
+        self.assertEqual("Fechada" ,self.ocorrencia1.getStatus())
+
 if __name__ == "__main__":
     unittest.main() # run all tests
 
