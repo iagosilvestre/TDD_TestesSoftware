@@ -116,6 +116,15 @@ class TDD_ocorrencia(unittest.TestCase):
         self.ocorrencia2 = Ocorrencia("Bug B", "Bug", "Media", "Aberta", "ocorrencia2")
         self.ocorrencia2.setPrioridadeAlta()
         self.assertEqual("Alta", self.ocorrencia2.getPrioridade())
+
+    def testeModificaResponsavel(self):
+        self.joao = Funcionario("Joao")
+        self.projeto.atribuiOcorrencia(self.ocorrencia1, self.ivan)
+        self.projeto.getOcorrenciaPorID(1).setResponsavel(self.joao)
+        self.assertEqual("Joao", self.projeto.getOcorrenciaPorID(1).getResponsavel().getNome())
+
+
+
 if __name__ == "__main__":
     unittest.main() # run all tests
 
