@@ -89,6 +89,9 @@ class TDD_ocorrencia(unittest.TestCase):
         self.assertEqual("Aberta", self.ocorrencia1.getStatus())
         self.assertEqual("ocorrencia1", self.ocorrencia1.getResumo())
 
+    def testeAtribuiFuncionario(self):
+        self.assertEqual("Ivan", self.ocorrencia1.getResponsavel())
+
 
 if __name__ == "__main__":
     unittest.main() # run all tests
